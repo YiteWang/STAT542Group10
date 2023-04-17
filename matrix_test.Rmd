@@ -2,7 +2,7 @@
 title: "matrix_test"
 author: "jcrull2"
 date: "2023-04-14"
-output: html_document
+output: github_document
 ---
 
 ```{r setup, include=FALSE}
@@ -19,6 +19,7 @@ library(softImpute)
 library()
 library()
 my_matrix <- data.matrix(subset(read.csv('feedback.csv'),select=c(-1)), rownames.force = NA)
+my_matrix
 paste0('Number of nonmissing ratings: ',length(my_matrix) - length(which(is.na(my_matrix))))
 paste0('Number of missing ratings: ',length(which(is.na(my_matrix))))
 real_matrix = as(my_matrix,"realRatingMatrix")
